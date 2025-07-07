@@ -1,15 +1,14 @@
 import { Component, output, signal } from '@angular/core';
 import { type Investment } from '../investment.model';
-import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-user-input',
-  imports: [FormsModule],
-templateUrl: './user-input.html',
-  styleUrl: './user-input.css'
+  templateUrl: './user-input.html',
+  styleUrl: './user-input.css',
+  standalone:false
 })
-export class UserInput {
+export class UserInputComponent {
   
   investmentSubmitted = output<Investment>();
 

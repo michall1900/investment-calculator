@@ -6,10 +6,10 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-user-input',
   imports: [FormsModule],
-templateUrl: './user-input.html',
-  styleUrl: './user-input.css'
+templateUrl: './user-input.component.html',
+  styleUrl: './user-input.component.css'
 })
-export class UserInput {
+export class UserInputComponent {
   
   investmentSubmitted = output<Investment>();
 

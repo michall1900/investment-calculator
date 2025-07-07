@@ -5,8 +5,8 @@ import { AnnualData } from '../investment.model';
 @Component({
   selector: 'app-investment-results',
   imports: [CurrencyPipe],
-  templateUrl: './investment-results.html',
-  styleUrl: './investment-results.css'
+  templateUrl: './investment-results.component.html',
+  styleUrl: './investment-results.component.css'
 })
 export class InvestmentResultsComponent {
 

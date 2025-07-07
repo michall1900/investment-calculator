@@ -1,5 +1,5 @@
-@if(!!investmentResults){
-  <section id="results">
+<section id="results">
+  @if(!!investmentResults()){
     <table>
       <thead>
         <tr>
@@ -22,12 +22,12 @@
         }
       </tbody>
     </table>
-  </section>
-}
+    }
 
-@else{
-  <p class="center">
-      Please enter some values and press "Calculate".
-  </p>
-}
+  @else{
+    <p class="center">
+        Please enter some values and press "Calculate".
+    </p>
+  }
 
+</section>

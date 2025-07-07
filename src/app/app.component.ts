@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
 import { Header } from './header/header';
 import { UserInput } from "./user-input/user-input";
-import { type Investment } from './investment.model';
+import { InvestmentResultsComponent } from "./investment-results/investment-results";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  imports: [Header, UserInput]
+  imports: [Header, UserInput, InvestmentResultsComponent]
 })
 
 export class AppComponent {
-  onSubmitInvestment(investmentProperties: Investment){
-    console.log(investmentProperties);
+
+  isCalculated: boolean = false;
+
+  onSubmitInvestment(){
+    this.isCalculated = true;  
   }
 }

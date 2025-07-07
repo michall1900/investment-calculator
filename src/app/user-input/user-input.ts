@@ -1,16 +1,17 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { type Investment } from '../investment.model';
 import { FormsModule } from '@angular/forms';
+import { InvestmentService } from './../investment-results/investment-results.service';
 
 @Component({
   selector: 'app-user-input',
   imports: [FormsModule],
-  templateUrl: './user-input.html',
+templateUrl: './user-input.html',
   styleUrl: './user-input.css'
 })
 export class UserInput {
   @Output()
-  investmentSubmitted = new EventEmitter<Investment>();
+  investmentSubmitted = new EventEmitter<void>();
 
   initialInvestment!: string;
   annualInvestment!: string;
@@ -18,18 +19,19 @@ export class UserInput {
   duration!: string;
   
 
-  constructor(){
+  constructor(private investmentService: InvestmentService){
     this.resetValues();
   }
   onSubmit(){
     console.log("submited");
-    this.investmentSubmitted.emit({
+    this.investmentService.calculateInvestmentResults({
       initialInvestment: +this.initialInvestment,
       annualInvestment: +this.annualInvestment,
       expectedReturn: +this.expectedReturn,
       duration: +this.duration
     })
-
+    
+    this.investmentSubmitted.emit()
     this.resetValues();
   }
 

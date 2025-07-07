@@ -1,12 +1,6 @@
 <app-header/>
 <main>
-  <app-user-input (investmentSubmitted)="onSubmitInvestment()"/>
-  @if(isCalculated){
-    <app-investment-results/>
-  }
-  @else {
-    <p class="center">
-      Please enter some values and press "Calculate".
-    </p>
-  }
+  <app-user-input (investmentSubmitted)="onSubmitInvestment($event)"/>
+  <app-investment-results [investmentResults]="annualData()"/>
+
 </main>

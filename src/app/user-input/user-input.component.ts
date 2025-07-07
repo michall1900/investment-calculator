@@ -1,14 +1,14 @@
 import { Component} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { InvestmentService } from './../investment-results/investment-results.service';
+import { InvestmentService } from '../investment-results/investment-results.service';
 
 @Component({
   selector: 'app-user-input',
   imports: [FormsModule],
-templateUrl: './user-input.html',
-  styleUrl: './user-input.css'
+templateUrl: './user-input.component.html',
+  styleUrl: './user-input.component.css'
 })
-export class UserInput {
+export class UserInputComponent {
 
   initialInvestment!: string;
   annualInvestment!: string;

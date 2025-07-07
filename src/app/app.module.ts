@@ -1,9 +1,9 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from '@angular/forms';
-import { HeaderComponent } from "./header/header";
-import { UserInputComponent } from "./user-input/user-input";
-import { InvestmentResultsComponent } from "./investment-results/investment-results";
+import { HeaderComponent } from "./header/header.component";
+import { UserInputComponent } from "./user-input/user-input.component";
+import { InvestmentResultsComponent } from "./investment-results/investment-results.component";
 import { AppComponent } from "./app.component";
 
 @NgModule({

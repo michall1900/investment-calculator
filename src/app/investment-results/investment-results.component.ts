@@ -3,8 +3,8 @@ import { AnnualData } from '../investment.model';
 
 @Component({
   selector: 'app-investment-results',
-  templateUrl: './investment-results.html',
-  styleUrl: './investment-results.css',
+  templateUrl: './investment-results.component.html',
+  styleUrl: './investment-results.component.css',
   standalone:false
 })
 export class InvestmentResultsComponent {

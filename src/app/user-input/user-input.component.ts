@@ -4,8 +4,8 @@ import { type Investment } from '../investment.model';
 
 @Component({
   selector: 'app-user-input',
-  templateUrl: './user-input.html',
-  styleUrl: './user-input.css',
+  templateUrl: './user-input.component.html',
+  styleUrl: './user-input.component.css',
   standalone:false
 })
 export class UserInputComponent {

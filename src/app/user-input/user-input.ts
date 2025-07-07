@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { type Investment } from '../investment.model';
+import { Component} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { InvestmentService } from './../investment-results/investment-results.service';
 
@@ -10,8 +9,6 @@ templateUrl: './user-input.html',
   styleUrl: './user-input.css'
 })
 export class UserInput {
-  @Output()
-  investmentSubmitted = new EventEmitter<void>();
 
   initialInvestment!: string;
   annualInvestment!: string;
@@ -31,7 +28,6 @@ export class UserInput {
       duration: +this.duration
     })
     
-    this.investmentSubmitted.emit()
     this.resetValues();
   }
 

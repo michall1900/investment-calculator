@@ -11,10 +11,4 @@ import { InvestmentResultsComponent } from "./investment-results/investment-resu
 })
 
 export class AppComponent {
-
-  isCalculated: boolean = false;
-
-  onSubmitInvestment(){
-    this.isCalculated = true;  
-  }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { AnnualData } from '../investment.model';
 import { InvestmentService } from './investment-results.service';
 import { CurrencyPipe } from '@angular/common';
@@ -13,7 +13,7 @@ export class InvestmentResultsComponent {
 
   constructor(public investmentsResultsService: InvestmentService){}
 
-  get investmentResults(): AnnualData[] | undefined{
+  get investmentResults(): ReadonlyArray<AnnualData> | undefined{
 
     return this.investmentsResultsService.getAnnualData();
   }

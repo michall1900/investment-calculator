@@ -33,8 +33,8 @@ export class InvestmentService{
     this.annualData = annualData;
   }
 
-  getAnnualData(): AnnualData[] | undefined{
-    return this.annualData
+  getAnnualData(): ReadonlyArray<AnnualData> | undefined{
+    return this.annualData?.map(data => ({ ...data }));
   }
 }
 

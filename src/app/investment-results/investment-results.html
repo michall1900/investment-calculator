@@ -1,25 +1,32 @@
 
 <section id="results">
-  <table>
-    <thead>
-      <tr>
-        <th scope="col">Year</th>
-        <th scope="col">Investment Value</th>
-        <th scope="col">Interest (Year)</th>
-        <th scope="col">Total Interest</th>
-        <th scope="col">Invested Capital</th>
-      </tr>
-    </thead>
-    <tbody>
-      @for(investmentResult of investmentResults; track investmentResult.year){
+  @if(investmentResults){
+    <table>
+      <thead>
         <tr>
-          <th scope="row">{{investmentResult.year}}</th>
-          <td>{{investmentResult.valueEndOfYear | currency}}</td>
-          <td>{{investmentResult.interest | currency }}</td>
-          <td>{{investmentResult.totalInterest | currency}}</td>
-          <td>{{investmentResult.totalAmountInvested | currency}}</td>
+          <th scope="col">Year</th>
+          <th scope="col">Investment Value</th>
+          <th scope="col">Interest (Year)</th>
+          <th scope="col">Total Interest</th>
+          <th scope="col">Invested Capital</th>
         </tr>
-      }
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        @for(investmentResult of investmentResults; track investmentResult.year){
+          <tr>
+            <th scope="row">{{investmentResult.year}}</th>
+            <td>{{investmentResult.valueEndOfYear | currency}}</td>
+            <td>{{investmentResult.interest | currency }}</td>
+            <td>{{investmentResult.totalInterest | currency}}</td>
+            <td>{{investmentResult.totalAmountInvested | currency}}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+  @else {
+    <p class="center">
+      Please enter some values and press "Calculate".
+    </p>
+  }
 </section>

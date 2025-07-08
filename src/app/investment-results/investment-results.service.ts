@@ -1,5 +1,5 @@
 
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { type AnnualData, type Investment } from '../investment.model';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { type AnnualData, type Investment } from '../investment.model';
 })
 export class InvestmentService{
 
-  private annualData?: AnnualData[];
+  annualData = signal<AnnualData[] | undefined>(undefined)
 
 
   calculateInvestmentResults(investment:Investment) {
@@ -30,11 +30,7 @@ export class InvestmentService{
       });
     }
 
-    this.annualData = annualData;
-  }
-
-  getAnnualData(): ReadonlyArray<AnnualData> | undefined{
-    return this.annualData?.map(data => ({ ...data }));
+    this.annualData.set(annualData);
   }
 }
 

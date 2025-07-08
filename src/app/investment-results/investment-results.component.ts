@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { AnnualData } from '../investment.model';
 import { InvestmentService } from './investment-results.service';
 import { CurrencyPipe } from '@angular/common';
@@ -11,11 +11,10 @@ import { CurrencyPipe } from '@angular/common';
 })
 export class InvestmentResultsComponent {
 
-  constructor(public investmentsResultsService: InvestmentService){}
+  private investmentsResultsService = inject(InvestmentService);
+  
 
-  get investmentResults(): ReadonlyArray<AnnualData> | undefined{
-
-    return this.investmentsResultsService.getAnnualData();
-  }
+  investmentResults = computed(() => this.investmentsResultsService.annualData())
+  
   
 }

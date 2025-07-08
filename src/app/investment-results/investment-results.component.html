@@ -1,5 +1,5 @@
 <section id="results">
-  @if(!!investmentResults()){
+  @if(!!investmentResults){
     <table>
       <thead>
         <tr>
@@ -11,7 +11,7 @@
         </tr>
       </thead>
       <tbody>
-        @for(investmentResult of investmentResults(); track investmentResult.year){
+        @for(investmentResult of investmentResults; track investmentResult.year){
           <tr>
             <th scope="row">{{investmentResult.year}}</th>
             <td>{{investmentResult.valueEndOfYear | currency}}</td>

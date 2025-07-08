@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { UserInputComponent } from "./user-input/user-input.component";
 import { InvestmentResultsComponent } from "./investment-results/investment-results.component";
@@ -13,7 +13,7 @@ import { AnnualData, Investment } from './investment.model';
 
 export class AppComponent {
   
-  annualData = signal<AnnualData[] | undefined>(undefined)
+  annualData?: AnnualData[] 
 
   onSubmitInvestment(investment:Investment) {
     const annualData = [];
@@ -36,7 +36,7 @@ export class AppComponent {
 
       
     }
-    this.annualData.set(annualData);
+    this.annualData = annualData;
   }
   
 }
